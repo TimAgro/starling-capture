@@ -31,6 +31,8 @@ import io.numbersprotocol.starlingcapture.feature.proof.ProofFragment
 import io.numbersprotocol.starlingcapture.feature.proof.ProofViewModel
 import io.numbersprotocol.starlingcapture.feature.publisher_config.PublisherConfigFragment
 import io.numbersprotocol.starlingcapture.feature.publisher_config.PublisherConfigViewModel
+import io.numbersprotocol.starlingcapture.feature.selfie_e_signature.SelfieESigantureViewModel
+import io.numbersprotocol.starlingcapture.feature.selfie_e_signature.SelfieESignatureFragment
 import io.numbersprotocol.starlingcapture.feature.setting.PreferenceFragment
 import io.numbersprotocol.starlingcapture.feature.setting.SettingFragment
 import io.numbersprotocol.starlingcapture.feature.storage.StorageFragment
@@ -124,6 +126,9 @@ val mainModule = module {
 
     viewModel { CcapiViewModel(get()) }
     fragment { CcapiFragment() }
+
+    viewModel { SelfieESigantureViewModel() }
+    fragment { SelfieESignatureFragment() }
 
     single(named(CoilImageLoader.SmallThumb)) {
         ImageLoader.Builder(androidContext())

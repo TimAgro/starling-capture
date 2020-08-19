@@ -29,6 +29,13 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/toSelfieESignatureFragment"
+            app:destination="@id/selfieESignatureFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
 
     <fragment
@@ -96,6 +103,11 @@
     <fragment
         android:id="@+id/informationProviderConfigFragment"
         android:name="io.numbersprotocol.starlingcapture.feature.information_provider_config.InformationProviderConfigFragment"
-        android:label="fragment_information_provider_config"
+        android:label="@string/information_provider"
         tools:layout="@layout/fragment_information_provider_config" />
+    <fragment
+        android:id="@+id/selfieESignatureFragment"
+        android:name="io.numbersprotocol.starlingcapture.feature.selfie_e_signature.SelfieESignatureFragment"
+        android:label="@string/selfie_e_signature"
+        tools:layout="@layout/fragment_selfie_e_signature" />
 </navigation>

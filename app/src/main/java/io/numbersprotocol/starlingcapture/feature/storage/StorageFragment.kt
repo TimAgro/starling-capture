@@ -102,13 +102,17 @@ class StorageFragment(private val publisherManager: PublisherManager) : Fragment
         val items = listOf(
             getString(InternalCameraProvider.SupportedAction.IMAGE.title),
             getString(InternalCameraProvider.SupportedAction.VIDEO.title),
-            getString(R.string.canon_ccapi)
+            getString(R.string.canon_ccapi),
+            getString(R.string.selfie_e_signature)
         )
         MaterialDialog(requireContext(), BottomSheet(LayoutMode.WRAP_CONTENT)).show {
             lifecycleOwner(viewLifecycleOwner)
             listItems(items = items) { _, _, text ->
-                if (text == getString(R.string.canon_ccapi)) findNavController().navigate(R.id.toCcapiFragment)
-                else startActivityForInternalCamera(text.toString())
+                when (text) {
+                    getString(R.string.canon_ccapi) -> findNavController().navigate(R.id.toCcapiFragment)
+                    getString(R.string.selfie_e_signature) -> findNavController().navigate(R.id.toSelfieESignatureFragment)
+                    else -> startActivityForInternalCamera(text.toString())
+                }
             }
         }
     }
